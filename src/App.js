@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import './Style.css'
+import './App.css'
 
 class App extends Component {
   constructor (p) {
@@ -10,6 +10,7 @@ class App extends Component {
       edit: ''
     }
   }
+
   render () {
     return (
       <div className='lol'>
@@ -45,17 +46,20 @@ class App extends Component {
       </div>
     )
   }
+
   handleInput (e) {
     const val = e.target.value
     this.setState({
       name: val
     })
   }
+
   handleClick () {
     this.setState({
       show: [...this.state.show, this.state.name]
     })
   }
+
   handleDelete (e) {
     const newShow = [...this.state.show]
     newShow.splice(e.target.name, 1)
@@ -63,6 +67,7 @@ class App extends Component {
       show: newShow
     })
   }
+
   handleEdit (e) {
     const editName = [...this.state.show]
     editName.splice(
@@ -87,6 +92,7 @@ class App extends Component {
       show: editName
     })
   }
+
   handleDone (e) {
     const editName = [...this.state.show]
     editName.splice(e.target.name, 1, this.state.edit)
